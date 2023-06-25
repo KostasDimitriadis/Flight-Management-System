@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Renew Flight Ticket Prices</title>
+</head>
+<body>
+    <h1>Renew Flight Ticket Prices</h1>
+
+    <form method="POST" action="/renewal">
+        <label for="flight_id">Choose a Flight:</label>
+        <select id="flight_id" name="flight_id" required>
+            {% for flight in flights %}
+            <option value="{{ flight._id }}">{{ flight.origin }} to {{ flight.destination }}  (ID: {{ flight._id }})</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <h3>Business Class</h3>
+        <label for="new_cost_business">New Cost:</label>
+        <input type="number" id="new_cost_business" name="new_cost_business" step="0.01" required><br>
+
+        <h3>Economy Class</h3>
+        <label for="new_cost_economy">New Cost:</label>
+        <input type="number" id="new_cost_economy" name="new_cost_economy" step="0.01" required><br>
+
+        <input type="submit" value="Renew Prices">
+    </form>
+
+    <br>
+    <a href="/adminpage">Return to Admin Page</a>
+</body>
+</html>

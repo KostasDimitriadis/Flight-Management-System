@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+</head>
+<body>
+    <h1>Bookings</h1>
+
+    <table>
+        <tr>
+            <th>Flight ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Ticket Type</th>
+        </tr>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.flight_id }}&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ booking.name }}&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ booking.surname }}&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ booking.date_of_birth }}&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ booking.email }}&nbsp;&nbsp;&nbsp;</td>
+                <td>{{ booking.ticket_type }}&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <td>
+                <form method="POST" action="/cancel">
+                    <input type="hidden" name="reservation_id" value="{{ booking['_id'] }}">
+                    <input type="submit" value="Cancel">
+                </form>
+            </td>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/homepage">Return home</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Details</title>
+</head>
+<body>
+    <h1>Flight Details</h1>
+    <h3>Flight Code: {{ flight.flight_code }}</h3>
+    <p>Airport of Origin: {{ flight.origin }}</p>
+    <p>Airport of Destination: {{ flight.destination }}</p>
+    <p>Total Number of Tickets: {{ flight.tickets }}</p>
+    <p>Total Number of Business Class Tickets: {{ flight.tickets_business }}</p>
+    <p>Total Number of Economy Class Tickets: {{ flight.tickets_economy }}</p>
+    <p>Ticket Cost - Business Class: {{ flight.cost_business }}</p>
+    <p>Ticket Cost - Economy Class: {{ flight.cost_economy }}</p>
+    <p>Available Tickets: {{ flight.available_tickets }}</p>
+    <p>Available Business Class Tickets: {{ flight.available_tickets_business }}</p>
+    <p>Available Economy Class Tickets: {{ flight.available_tickets_economy }}</p>
+
+    <h2>Reservations</h2>
+    {% if reservations %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Seat Category</th>
+            </tr>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.first_name }}</td>
+                    <td>{{ reservation.last_name }}</td>
+                    <td>{{ reservation.seat_category }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No reservations for this flight.</p>
+    {% endif %}
+
+    <br>
+    <a href="/adminFlights">Back to Flights</a>
+</body>
+</html>

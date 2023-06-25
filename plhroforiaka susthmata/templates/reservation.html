@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Flight</title>
+</head>
+<body>
+    <h1>Book a Flight</h1>
+
+    <form method="POST" action="/reservation">
+        <label for="flight_id">Select Flight:</label>
+        <select id="flight_id" name="flight_id">
+            {% for flight in flights %}
+                <option value="{{ flight._id }}">{{ flight._id }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname">
+        <br>
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="text" i<!DOCTYPE html>
+       
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <br>
+        <label for="ticket_type">Ticket Type:</label>
+        <select id="ticket_type" name="ticket_type">
+            <option value="business">Business</option>
+            <option value="economy">Economy</option>
+        </select>
+        <br>
+        <input type="submit" value="Book Flight">
+    </form>
+</body>
+</html>
+

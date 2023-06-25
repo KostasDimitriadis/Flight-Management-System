@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Flight</title>
+</head>
+<body>
+    <h1>Create New Flight</h1>
+
+    <form method="POST" action="/create">
+        <label for="origin">Airport of Origin:</label>
+        <input type="text" id="origin" name="origin" required><br>
+
+        <label for="destination">Airport of Destination:</label>
+        <input type="text" id="destination" name="destination" required><br>
+
+        <label for="date">Date of Flight:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <h3>Business Class</h3>
+        <label for="tickets_business">Available Tickets:</label>
+        <input type="number" id="tickets_business" name="tickets_business" required><br>
+
+        <label for="cost_business">Cost:</label>
+        <input type="number" id="cost_business" name="cost_business" step="0.01" required><br>
+
+        <h3>Economy Class</h3>
+        <label for="tickets_economy">Available Tickets:</label>
+        <input type="number" id="tickets_economy" name="tickets_economy" required><br>
+
+        <label for="cost_economy">Cost:</label>
+        <input type="number" id="cost_economy" name="cost_economy" step="0.01" required><br>
+
+        <input type="submit" value="Create Flight">
+    </form>
+
+    <br>
+    <a href="/adminpage">Return home</a>
+</body>
+</html>

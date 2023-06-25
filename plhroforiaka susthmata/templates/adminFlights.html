@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Flights</title>
+</head>
+<body>
+    <h1>Admin Flights</h1>
+
+    <table>
+        <tr>
+            <th>Flight ID</th>
+            <th>Flight Name</th>
+            <th>Delete</th>
+        </tr>
+        {% for flight in flights %}
+            <tr>
+                <td>{{ flight._id }}</td>
+                <td>{{ flight.origin }} to {{ flight.destination }}<a href="/flight-details/{{ flight._id }}">View Details </a>
+
+                </td>
+                <td>
+                    {% if not has_reservations(flight._id) %}
+                        <form method="POST" action="/delete-flight">
+                            <input type="hidden" name="flight_id" value="{{ flight._id }}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    {% else %}
+                        Cannot delete
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/adminpage">Return to Admin Page</a>
+</body>
+</html>

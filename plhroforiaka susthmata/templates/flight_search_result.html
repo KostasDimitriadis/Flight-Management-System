@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Search Results</title>
+ 
+</head>
+<body>
+    <h1>Flight Search Results</h1>
+
+    {% if results %}
+        <table>
+            <tr>
+                <th>Flight ID</th>
+                <th>Date</th>
+                <th>Origin</th>
+                <th>Destination</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result._id }} &nbsp;&nbsp;&nbsp;</td>
+                    <td>{{ result.date }}&nbsp;&nbsp;&nbsp;</td>
+                    <td>{{ result.origin }}&nbsp;&nbsp;&nbsp;</td>
+                    <td>{{ result.destination }}&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No flights found.</p>
+    {% endif %}
+    
+    <a href="/homepage" >Return to Home</a>
+</body>
+</html>
