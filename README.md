@@ -1,21 +1,22 @@
-Ένας απλός χρήστης μπορεί να εκτελέσει  : 
-  Είσοδος στο σύστημα
-  Έξοδος από το σύστημα
-  Αναζήτηση πτήσεων
-  Εμφάνιση στοιχείων πτήσης
-  Κράτηση εισιτηρίου
-  Εμφάνιση κρατήσεων
-  Εμφάνιση στοιχείων κράτησης
-  Ακύρωση κράτησης
-  Διαγραφή του λογαριασμού του από την υπηρεσία
+A simple user can run : 
+  Login to the system
+  Exit the system
+  Search for flights
+  Display flight details
+  Ticket booking
+  Show reservations
+  Show booking details
+  Cancel a reservation
+  Deletion of the account from the service
   
- Ένας διαχειριστής θα μπορεί να εκτελέσει: 
-  Είσοδος στο σύστημα
-  Έξοδος από το σύστημα
-  Δημιουργία πτήσης
-  Ανανέωση τιμών εισιτηρίων πτήσης
-  Διαγραφή πτήσης
-  Εμφάνιση στοιχείων πτήσεων
+ An administrator will be able to perform: 
+  Log in to the system
+  Log out of the system
+  Create a flight
+  Update flight ticket prices
+  Delete a flight
+  Displaying flight details
 
   
-Στον φάκελο screenshots υπάρχουν στιγμιότυπα με αυτές τις ενέργειες
+
+
